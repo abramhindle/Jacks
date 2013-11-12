@@ -48,6 +48,10 @@ typedef struct {
             return(float*) $self->framebuf[i];
         }
 
+        void dumpBuffer(char * buffer) {
+            memcpy(buffer, $self->framebuf, sizeof(float)*$self->len);
+        }
+
         void setf(unsigned int i, float val) {
 
             throw_exception("unsupported opperation");
