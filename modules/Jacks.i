@@ -49,7 +49,8 @@ typedef struct {
         }
 
         void dumpBuffer(char * buffer) {
-            memcpy(buffer, $self->framebuf, sizeof(float)*$self->len);
+            /* I'm not convinced we need to multiply by type size */
+            memcpy(buffer, $self->framebuf, $self->len);
         }
 
         void setf(unsigned int i, float val) {

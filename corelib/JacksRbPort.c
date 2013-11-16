@@ -70,8 +70,8 @@ T JacksRbPort_new(jack_port_t *jport, void * jackclientp, jack_nframes_t rb_size
     _this_->playback_lat_cb_fd[1] = 0;
     _this_->jackclient = jackclient;
     _this_->framebuf = malloc(rb_size);
-
-	_this_->rb = jack_ringbuffer_create(jacks_sample_size * rb_size);
+    // Is this correct? 
+    _this_->rb = jack_ringbuffer_create(jacks_sample_size * rb_size);
     return _this_;
 }
 
